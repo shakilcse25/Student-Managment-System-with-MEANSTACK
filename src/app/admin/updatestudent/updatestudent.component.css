@@ -1,0 +1,115 @@
+.nwad {
+  padding: 20px 48px;
+  padding-top: 0;
+}
+
+.col-sm-4 {
+  float: left !important;
+}
+
+.subject label,
+.date label {
+  float: left;
+  margin-right: 10px;
+  padding-top: 7px;
+  margin-left: 26px;
+}
+
+.subject input {
+  float: left;
+  width: 260px;
+}
+
+.date input {
+  float: left;
+  width: 200px;
+}
+
+.mybtn {
+  display: inline-block;
+  text-align: right;
+  margin-left: 73%;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.go {
+  margin-right: 40px;
+}
+
+.mytab {
+  padding: 10px 40px;
+}
+
+.basic_main,
+.education_main,
+.billing_main,
+.payment_main,
+.quota_main {
+  padding: 15px 25px;
+}
+
+.col-sm-6,
+.col-sm-8,
+.col-sm-4,
+.col-sm-7,
+.col-sm-5,
+.col-sm-2,
+.col-sm-3,
+.col-sm-1 {
+  float: left;
+}
+
+.nm_left {
+  border-right: 1px solid darkgray;
+  padding-right: 18px;
+}
+
+.nm_right {
+  padding-left: 20px;
+}
+
+.all_name {
+  display: flex;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.gender {
+  min-width: 248px;
+  border: 1px solid lightgray;
+  margin: 0px 15px;
+}
+
+.example-margin {
+  margin-right: 6px;
+}
+
+.moreinfo {
+  margin-top: 20px;
+  margin: 40px 0px;
+  margin-bottom: 60px;
+}
+
+.education_main {
+  padding-top: 40px;
+}
+
+.education_main h6 {
+  padding-top: 20px;
+  background-color: gainsboro;
+  border-radius: 4px 0px 0px 4px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.ssc {
+  background-color: white;
+}
+
+.mat-raised-button {
+  background-color: teal;
+  color: #fff;
+}

@@ -1,0 +1,17 @@
+<div class="navarea">
+  <nav>
+    <ul>
+      <li><a [routerLink]="['../home']">Home</a></li>
+      <li><a href="">Campus Life</a></li>
+      <li><a href="">Notice Board</a></li>
+      <li><a href="">Feeback</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <a *ngIf="b==0" [routerLink]="['../login']" class="loginbtn">LOGIN</a>
+  <form *ngIf="b==1" (ngSubmit)="logout()" class="semester">
+    <p style="color:white;">{{stus.dept_id}}</p>
+    <input type="submit" value="LOGOUT">
+  </form>
+</div>

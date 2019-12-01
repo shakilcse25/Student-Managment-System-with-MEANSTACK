@@ -1,0 +1,174 @@
+.full_content {
+  float: none;
+  margin: 0px auto;
+  width: 600px;
+  display: flow-root;
+  margin-top: 80px;
+  padding-bottom: 28px;
+}
+
+.details {
+  display: inline-block;
+  margin-top: 35px;
+}
+
+.main_content {
+  background-color: #F5F5F5;
+  min-height: 700px;
+}
+
+footer {
+  padding: 20px 0px;
+  background-color: #414141;
+  color: #fff;
+}
+
+.main_content_area {
+  display: flex;
+}
+
+.res_inp_box {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 0px auto;
+  width: 540px;
+}
+
+.res_inp_box select {
+  margin: 0px auto;
+  width: 224px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.res_inp_box button {
+  margin: 0px auto;
+  width: 85px;
+  float: none;
+  display: block;
+  padding: 5px;
+}
+
+.full_content p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.box_title {
+  margin: 10px 0px;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th,
+table {
+  padding: 5px;
+  border: 1px solid red;
+  border-collapse: collapse;
+}
+
+.mytable th {
+  height: 40px !important;
+}
+
+.mytable label {
+  float: left;
+  width: 120px;
+}
+
+.gpa {
+  text-decoration: underline;
+}
+
+.conclusion {
+  text-align: right;
+  margin: 0px auto;
+  width: 370px;
+  padding: 30px 0px;
+}
+
+.conclusion .con_para {
+  float: left;
+  text-align: right;
+  width: 300px;
+  padding-right: 15px;
+}
+
+footer {
+  margin-top: 1px;
+}
+
+.login {
+  margin: 0px;
+  padding-right: 20px;
+  float: right;
+  height: 100%;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.login a {
+  text-decoration: none;
+  color: #fff;
+}
+
+fieldset.scheduler-border {
+  border: solid 2px #DDD !important;
+  padding: 0 10px 10px 10px;
+  border-bottom: none;
+}
+
+legend.scheduler-border {
+  width: auto !important;
+  border: none;
+  font-size: 18px;
+  color: forestgreen;
+}
+
+.login_form {
+  margin: 0px auto;
+  width: 520px;
+}
+
+.login_form label {
+  width: 85px;
+  float: left;
+  padding-top: 5px;
+}
+
+.login_form input {
+  width: 300px;
+}
+
+.main_form {
+  padding: 20px;
+  margin: 0px auto;
+  width: 428px;
+}
+
+.main_form button {
+  width: 90px;
+  margin-top: 25px;
+  margin-right: 10px;
+  padding: 0;
+  box-shadow: 1px 3px 4px 2px #a4bca4;
+  margin-bottom: 20px;
+}
+
+.main_form p {
+  color: forestgreen;
+  text-align: center;
+}
+
+.main_form p a {
+  text-decoration: none;
+  color: forestgreen;
+  font-weight: bold;
+}
+#sel1{
+    padding: 5px 20px;
+}

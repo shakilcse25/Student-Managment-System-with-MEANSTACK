@@ -1,0 +1,229 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <app-header></app-header>
+
+    <!-- page title area start -->
+    <div class="page-title-area">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="breadcrumbs-area clearfix">
+            <h4 class="page-title pull-left">Dashboard</h4>
+            <ul class="breadcrumbs pull-left">
+              <li><a href="index.html">Home</a></li>
+              <li><span>Dashboard</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 clearfix">
+          <div class="user-profile pull-right">
+            <img class="avatar user-thumb" src="assets/images/icon/bauet.png" alt="avatar">
+            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Bauet <i class="fa fa-angle-down"></i></h4>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Message</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- page title area end -->
+    <div class="main-content-inner">
+
+      <div class="full-row col-sm-12" style="margin-bottom:30px;display: flex;margin-top: 30px;">
+          <form (ngSubmit) = "setsemester()" class="semester" style="margin-right: 30px;">
+            <mat-form-field style="margin-right:20px;">
+              <mat-select placeholder="Semester"  name="semester" [(ngModel)]="selectsem" required>
+                <mat-option *ngFor="let semester of semesters" [value]="semester.value">
+                  {{semester.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <input type="submit" class="btn" value="Search Semester">
+          </form>
+
+          <form (ngSubmit)="cgpaSet()">
+            <mat-form-field>
+              <input type="number" matInput placeholder="Overall GPA" [(ngModel)]="gpa.cgpa" name="cgpa" value="{{cgpaobj.cgpa}}">
+            </mat-form-field>    
+            <button mat-raised-button color="primary" style="margin-left:15px;">Set</button>       
+          </form>
+      </div>
+
+
+
+      <div *ngIf="selectsem != null && a=='1'"  class="semester_form" style="margin-bottom:20px;">
+        <mat-card style="margin-top:30px;padding:15px;margin:0px auto;width:500px;">
+          <form (ngSubmit)="updateSemester()" >
+
+            <mat-form-field style="margin-right:22px;">
+              <input type="number" matInput placeholder="Current GPA" [(ngModel)]="semobj.currentgpa" name="currentgpa">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="number" matInput placeholder="Semester GPA" [(ngModel)]="semobj.sgpa" name="sgpa">
+            </mat-form-field>
+
+            <mat-form-field style="margin-right:22px;">
+              <input type="number" matInput placeholder="Total Credit" [(ngModel)]="semobj.total_credit" name="total_credit">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="number" matInput placeholder="Earned Credit" [(ngModel)]="semobj.earn_credit" name="earn_credit">
+            </mat-form-field>
+
+            <mat-form-field style="margin-right:22px;margin: 0px auto;">
+              <mat-select placeholder="Status"   [(ngModel)]="semobj.status" name="status">
+                <mat-option *ngFor="let stat of status" [value]="stat.value">
+                  {{stat.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+
+            <p class="text-center" style="margin-top:20px;margin-bottom:10px;"><input type="submit" class="btn primary" value="Update"></p>
+          </form>
+        </mat-card>
+      </div>
+
+
+
+          <div *ngIf="selectsem != null && a==1"  class="addcourse" style="display: block;">
+            <button data-toggle="modal" (click)="opendial()" data-target="#myModal" style="background-color: darkslateblue;color: #fff;" mat-raised-button>Add Course<mat-icon>add_circle</mat-icon>
+            </button>
+
+
+
+
+
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <mat-toolbar class="text-center">
+                    <p class="text-center">Course and Grade</p>
+                  </mat-toolbar>
+                  <form class="addcourse"  (ngSubmit)="addCourse()" class="addcrs" style="padding-top: 30px;" >
+
+
+                      <label for="flexdatalist" style="width:39%;float: left;color:black;padding-left: 2px;">Subject Name: </label>
+                      <p style="font-size: 10px;float: left;width:60%; ">Can't find requiered subject?<a href="">Add New Subject</a></p>
+
+                      <select [(ngModel)]="courseobj.subject_name" class="add-select course_name" id="selcrs" name="subject_name">
+                        <option *ngFor="let crs of autocourse_name"  [ngValue]="crs.course_name">{{crs.course_name}}</option>
+                      </select>
+
+
+
+                    <mat-form-field style="width: 40%;margin-top:30px;">
+                      <input type="number" matInput placeholder="Earned Point"  [(ngModel)]="courseobj.subject_point" name="subject_point">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 40%;margin-top:30px;float: right;">
+                      <input type="text" matInput placeholder="Grade"  [(ngModel)]="courseobj.subject_grade" name="subject_grade">
+                    </mat-form-field>
+
+                    <p class="text-center" style="margin-top:35px;margin-bottom: 30px;"><button type="submit" class="btn" style="background-color: darkslateblue;color:#fff;" mat-button>Submit</button></p>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- End modal -->
+
+      <div  *ngIf="selectsem != null && a==1"  class="payment_history col-sm-12">
+        <mat-card>
+          <h4 style="padding:20px 0px;">Subject Grades and Points</h4>
+          <table>
+            <tr>
+              <th style="width:10%;">Serial</th>
+              <th style="width:40%;">Subject Name</th>
+              <th style="width:15%;">Subject ID</th>
+              <th style="width:10%;">Earned GPA</th>
+              <th style="width:10%;">Grade</th>
+              <th style="width: 15%;" class="action">Actions</th>
+            </tr>
+            <tr *ngFor="let st of test; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{st.subject_name}}</td>
+              <td>{{st.subject_code}}</td>
+              <td>{{st.subject_point}}</td>
+              <td>{{st.subject_grade}}</td>
+              <td>
+                <mat-icon  data-toggle="modal" data-target="#editModal" (click)="openDialog(st._id)"  >edit</mat-icon>
+                <mat-icon (click)="delCourse(st._id)">delete</mat-icon>
+              </td>
+            </tr>
+          </table>
+
+
+            <!-- The Modal -->
+            <div *ngIf="selectsem != null && editcourse==1" class="modal fade" id="editModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <mat-toolbar class="text-center">
+                    <p class="text-center">Course and Grade</p>
+                  </mat-toolbar>
+                  <form class="addcourse"  (ngSubmit)="submitEdit(crsobj._id)" class="updatecrs" >
+
+
+                    <div class="ui-widget crs_name" style="margin-top:20px;margin-bottom:15px;">
+                      <label for="flexdatalist"  style="margin-right:14px;">Subject Name: </label>
+
+
+
+
+                      <select [(ngModel)]="mycrs.subject_name" class="chosen-select course_name" name="subject_name"  (ngModelChange)="getsubjectCode($event)">
+                        <option value=""></option>
+                        <option *ngFor="let crs of autocourse_name"  [ngValue]="crs.course_name" [selected]="mycrs.subject_name == true">{{crs.course_name}}</option>
+                      </select>
+
+                    </div>
+
+
+
+
+
+<select [(ngModel)]="mycrs.subject_name" id="select-country" name="subject_name">
+  <option value="" selected>good morning</option>
+  <option *ngFor="let crs of autocourse_name" [ngValue]="crs.course_name">{{crs.course_name}}</option>
+</select>
+<p><span>selected subject : </span>{{mycrs.subject_name}}</p>
+
+
+
+
+                    <mat-form-field style="margin-right:20px;">
+                      <input type="number" matInput placeholder="Earned Point"  [(ngModel)]="mycrs.subject_point"   name="subject_point">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <input type="text" matInput placeholder="Grade" name="subject_grade" [(ngModel)]="mycrs.subject_grade" >
+                    </mat-form-field>
+
+                    <p class="text-center"><button type="submit" style="background-color:cadetblue;" mat-button>Submit</button></p>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
+          <!-- End modal -->
+
+
+        </mat-card>
+      </div>
+
+
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+</div>

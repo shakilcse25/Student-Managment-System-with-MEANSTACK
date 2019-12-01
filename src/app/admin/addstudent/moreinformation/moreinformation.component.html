@@ -1,0 +1,508 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <app-header></app-header>
+
+    <!-- page title area start -->
+    <div class="page-title-area">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="breadcrumbs-area clearfix">
+            <h4 class="page-title pull-left">Dashboard</h4>
+            <ul class="breadcrumbs pull-left">
+              <li><a  [routerLink]="['/dashboard']" >Home</a></li>
+              <li><a  [routerLink]="['/addstudent']">Add student</a></li>
+              <li><strong>More information</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 clearfix">
+          <div class="user-profile pull-right">
+            <img class="avatar user-thumb" src="assets/images/icon/bauet.png" alt="avatar">
+            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Bauet <i class="fa fa-angle-down"></i></h4>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Message</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- page title area end -->
+    <div class="main-content-inner">
+
+
+
+
+
+        <section class="mytab">
+          <mat-tab-group (selectedIndexChange)="selectedIndexChange($event)" [selectedIndex]="selectedIndex">
+
+            <mat-tab label="Basic Info">
+              <div class="basic_main">
+                <form (ngSubmit)="update_basic(stu._id,student)" method="post" #basicForm="ngForm">
+
+                  <div class="all_name">
+                    <div class="nm_left col-sm-6">
+                      <div class="row">
+                        <mat-form-field class="nm col-sm-7">
+                          <input matInput placeholder="Student Name" [(ngModel)]="student.name" name="name" required>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width phn col-sm-5">
+                          <span matPrefix>+88 &nbsp;</span>
+                          <input type="tel" matInput placeholder="Telephone" [(ngModel)]="student.phone" name="phone">
+                          <mat-icon matSuffix><i class="fa fa-phone"></i> </mat-icon>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="row">
+                        <mat-form-field class="nm col-sm-7">
+                          <input matInput placeholder="Father Name" [(ngModel)]="student.father_name" name="father_name">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width phn col-sm-5">
+                          <span matPrefix>+88 &nbsp;</span>
+                          <input type="tel" matInput placeholder="Telephone" [(ngModel)]="student.father_phone" name="father_phone">
+                          <mat-icon matSuffix><i class="fa fa-phone"></i></mat-icon>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+
+                    <div class="nm_right col-sm-6">
+                      <div class="row">
+                        <mat-form-field class="nm col-sm-7">
+                          <input matInput placeholder="Mother Name" [(ngModel)]="student.mother_name" name="mother_name">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width phn col-sm-5">
+                          <span matPrefix>+88 &nbsp;</span>
+                          <input type="tel" matInput placeholder="Telephone" [(ngModel)]="student.mother_phone" name="mother_phone">
+                          <mat-icon matSuffix><i class="fa fa-phone"></i> </mat-icon>
+                          <!-- mode_edit -->
+                        </mat-form-field>
+                      </div>
+
+                      <div class="row">
+                        <mat-form-field class="nm col-sm-12">
+                          <input matInput placeholder="Birth Certificate No" type="number" [(ngModel)]="student.Birth_cirtificate" name="Birth_cirtificate">
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="moreinfo col-sm-12" style="margin-top:20px;">
+                    <div class="row">
+
+                      <div class="blood col-sm-2 text-center" style="margin-right:24px;">
+                        <mat-form-field>
+                          <mat-select placeholder="Blood Group" [(ngModel)]="student.blood_group" name="blood_group">
+                            <mat-option *ngFor="let blood of bloods" [value]="blood.value">
+                              {{blood.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="religion col-sm-2 text-center" style="margin-right:24px;">
+                        <mat-form-field>
+                          <mat-select placeholder="Religion" [(ngModel)]="student.religion" name="religion">
+                            <mat-option *ngFor="let religion of religions" [value]="religion.value">
+                              {{religion.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+
+
+                      <div class="gender text-center col-xs-3">
+                        <label class="example-margin">Gender:</label>
+                        <mat-radio-group [(ngModel)]="student.gender" name="gender">
+                          <mat-radio-button value="Male">Male</mat-radio-button>
+                          <mat-radio-button value="Female">Female</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+
+
+                      <div class="maritial col-sm-2 text-center" style="margin-right:24px;">
+                        <mat-form-field>
+                          <mat-select placeholder="Marital Status" [(ngModel)]="student.marital" name="marital">
+                            <mat-option *ngFor="let marital of maritals" [value]="marital.value">
+                              {{marital.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+
+
+                      <div class="birth text-center col-sm-2" style="margin-right:24px;">
+                        <!-- <input type="date" id="datepicker" class="form-control input-sm" size="30"> -->
+                        <mat-form-field>
+                          <input matInput [matDatepicker]="pickers" placeholder="Birth Date" [(ngModel)]="student.date_of_birth" name="date_of_birth">
+                          <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+                          <mat-datepicker #pickers></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="basic_address col-sm-12">
+
+                    <div class="addr_left col-sm-6">
+                      <h4 class="text-center underlined">Parmanent Address</h4>
+                      <div class="vil">
+                        <mat-form-field class="example-full-width">
+                          <textarea matInput placeholder="Village/city" [(ngModel)]="student.per_vil" name="per_vil"></textarea>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="road">
+                        <mat-form-field class="example-full-width">
+                          <textarea matInput placeholder="Road" [(ngModel)]="student.per_road" name="per_road"></textarea>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="posts">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Post" [(ngModel)]="student.per_post_ofice" name="per_post_ofice">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="thana">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Thana" [(ngModel)]="student.per_thana" name="per_thana">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="upozila">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Upozila" [(ngModel)]="student.per_upozila" name="per_upozila">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="district">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="District" [(ngModel)]="student.per_district" name="per_district">
+                        </mat-form-field>
+                      </div>
+
+                    </div>
+
+                    <div class="addr_right col-sm-6">
+                      <h4 class="text-center underlined">Present Address</h4>
+                      <div class="vil">
+                        <mat-form-field class="example-full-width">
+                          <textarea matInput placeholder="village/city" [(ngModel)]="student.pre_vil" name="pre_vil"></textarea>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="road">
+                        <mat-form-field class="example-full-width">
+                          <textarea matInput placeholder="Road" [(ngModel)]="student.pre_road" name="pre_road"></textarea>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="posts">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Post" [(ngModel)]="student.pre_post_ofice" name="pre_post_ofice">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="thana">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Thana" [(ngModel)]="student.pre_thana" name="pre_thana">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="upozila">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Upozila" [(ngModel)]="student.pre_upozila" name="pre_upozila">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="district">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="District" [(ngModel)]="student.pre_district" name="pre_district">
+                        </mat-form-field>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <p class="text-right" style="margin-top:30px;margin-right:60px;"> <button type="submit" mat-raised-button color="primary" [disabled]="!basicForm.form.valid">Submit and Go</button></p>
+
+                </form>
+              </div>
+
+              <!-- <button (click)="clickMe()"> click me to go to tab 2 </button> -->
+            </mat-tab>
+
+
+            <mat-tab label="Educational Info">
+              <div class="education_main">
+                <form (ngSubmit)="update_basic(stu._id,student)" method="post" #eduForm="ngForm">
+
+                  <div class="ssc row">
+                    <h6 class="col-sm-2">SSC/EQUIVALENT</h6>
+                    <div class="board col-sm-3">
+                      <mat-form-field>
+                        <mat-select placeholder="Educational Baord" [(ngModel)]="student.ssc_board" name="ssc_board">
+                          <mat-option *ngFor="let board of boards" [value]="board.value">
+                            {{board.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="reg col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Registration No" [(ngModel)]="student.ssc_reg" name="ssc_reg">
+                      </mat-form-field>
+                    </div>
+                    <div class="pass_year col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Passed Year" [(ngModel)]="student.ssc_pass_year" name="ssc_pass_year">
+                      </mat-form-field>
+                    </div>
+                    <div class="marks col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Earned GPA" [(ngModel)]="student.ssc_mark_obtain" name="ssc_mark_obtain">
+                      </mat-form-field>
+                    </div>
+                    <div class="gpa col-sm-1">
+                      <mat-form-field>
+                        <mat-select placeholder="Grade" [(ngModel)]="student.ssc_grade" name="ssc_grade">
+                          <mat-option *ngFor="let grade of grades" [value]="grade.value">
+                            {{grade.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="ssc row">
+                    <h6 class="col-sm-2">HSC/EQUIVALENT</h6>
+                    <div class="board col-sm-3">
+                      <mat-form-field>
+                        <mat-select placeholder="Educational Baord" [(ngModel)]="student.hsc_board" name="hsc_board">
+                          <mat-option *ngFor="let board of boards" [value]="board.value">
+                            {{board.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="reg col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Registration No" [(ngModel)]="student.hsc_reg" name="hsc_reg">
+                      </mat-form-field>
+                    </div>
+                    <div class="pass_year col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Passed Year" [(ngModel)]="student.hsc_pass_year" name="ssc_pass_year">
+                      </mat-form-field>
+                    </div>
+                    <div class="marks col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Earned GPA" [(ngModel)]="student.hsc_mark_obtain" name="hsc_mark_obtain">
+                      </mat-form-field>
+                    </div>
+                    <div class="gpa col-sm-1">
+                      <mat-form-field>
+                        <mat-select placeholder="Grade" [(ngModel)]="student.hsc_grade" name="hsc_grade">
+                          <mat-option *ngFor="let grade of grades" [value]="grade.value">
+                            {{grade.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="ssc row">
+                    <h6 class="col-sm-2">DIPLOMA</h6>
+                    <div class="board col-sm-3">
+                      <mat-form-field>
+                        <mat-select placeholder="Educational Baord" [(ngModel)]="student.dip_board" name="dip_board">
+                          <mat-option *ngFor="let board of boards" [value]="board.value">
+                            {{board.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="reg col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Registration No" [(ngModel)]="student.dip_reg" name="dip_reg">
+                      </mat-form-field>
+                    </div>
+                    <div class="pass_year col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Passed Year" [(ngModel)]="student.dip_pass_year" name="dip_pass_year">
+                      </mat-form-field>
+                    </div>
+                    <div class="marks col-sm-2">
+                      <mat-form-field>
+                        <input matInput type="number" placeholder="Earned GPA" [(ngModel)]="student.dip_mark_obtain" name="dip_mark_obtain">
+                      </mat-form-field>
+                    </div>
+                    <div class="gpa col-sm-1">
+                      <mat-form-field>
+                        <mat-select placeholder="Grade" [(ngModel)]="student.grade" name="grade">
+                          <mat-option *ngFor="let grade of grades" [value]="grade.value">
+                            {{grade.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="school_name col-sm-12">
+                    <mat-form-field>
+                      <input matInput placeholder="School Name" [(ngModel)]="student.school_name" name="school_name">
+                    </mat-form-field>
+                  </div>
+                  <div class="collage_name col-sm-12">
+                    <mat-form-field>
+                      <input matInput placeholder="Collage Name" [(ngModel)]="student.collage_name" name="collage_name">
+                    </mat-form-field>
+                  </div>
+
+                  <p class="text-right" style="margin-top:30px;margin-right:40px;"> <button mat-raised-button type="submit" color="primary" [disabled]="!eduForm.form.valid">Submit and Go</button></p>
+                </form>
+              </div>
+            </mat-tab>
+
+
+            <mat-tab label="Billing Mode">
+              <div class="billing_main col-sm-12">
+                <form class="" method="post" (ngSubmit)="update_basic(stu._id,student)" #billForm = "ngForm">
+                  <div class="adm_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Admission Fee(Not Refundable)" [(ngModel)]="student.admission_fee" name="admission_fee">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="semis_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Semester Fee"  [(ngModel)]="student.semester_fee" name="semester_fee">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="Establ_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Establishment Fee"  [(ngModel)]="student.establishment_fee" name="establishment_fee">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="sequrity_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Security Mont(Refundable)"  [(ngModel)]="student.security_refoundable" name="security_refoundable">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="rigis_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Term Registration"  [(ngModel)]="student.term_reg" name="term_reg">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="tution_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Tution Fee"  [(ngModel)]="student.tution_fee" name="tution_fee">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="lb_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Library Fee"  [(ngModel)]="student.library_fee" name="library_fee">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="act_fee col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Student Activities"  [(ngModel)]="student.student_activities" name="student_activities">
+                    </mat-form-field>
+                  </div>
+
+
+                  <div class="mce-bar-container col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="MRC NO" [(ngModel)]="student.mrc_no" name="mrc_no">
+                    </mat-form-field>
+                  </div>
+
+
+                  <div class="totals col-sm-6 text-center">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Total Fee"  [(ngModel)]="student.total_init" name="total_init"  value="{{conv(student.admission_fee) + conv(student.semester_fee) + conv(student.establishment_fee) + conv(student.security_refoundable) + conv(student.term_reg) + conv(student.tution_fee) + conv(student.library_fee) + conv(student.student_activities)}}">
+                    </mat-form-field>
+                  </div>
+                  <p class="text-right" style="margin-top:30px;margin-right:40px;"> <button type="submit" mat-raised-button color="primary" [disabled]="!billForm.form.valid">Submit and Go</button></p>
+                </form>
+              </div>
+            </mat-tab>
+
+            <!-- <mat-tab label="Payment Mode">
+              <div class="payment_main">
+                <h5>As Per Schedule</h5>
+                <form method="post" (ngSubmit)="update_basic(stu._id,student)">
+
+                  <div class="row">
+                    <div class="fe col-sm-6 text-center">
+                      <mat-form-field>
+                        <mat-select placeholder="Fee">
+                          <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                    <div class="fee_durat col-sm-6 text-center">
+                      <mat-form-field>
+                        <mat-select placeholder="Fee Duration">
+                          <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="totals text-center col-sm-12">
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Total Fee">
+                    </mat-form-field>
+                  </div>
+                  <p class="text-right" style="margin-top:30px;margin-right:40px;"> <button type="submit" mat-raised-button color="primary">Submit and Go</button></p>
+                </form>
+              </div>
+            </mat-tab> -->
+
+            <mat-tab label="Quota">
+              <div class="quota_main">
+                <form (ngSubmit)="final_update(stu._id,student)" method="post" #quataForm="ngForm">
+                  <h5>QUOTA</h5>
+                  <div class="quata">
+                    <div class="fee-duration col-sm-6 text-center">
+                      <mat-form-field>
+                        <mat-select placeholder="Select Quota(If Any)" [(ngModel)]="student.quata" name="quata">
+                          <mat-option *ngFor="let quota of quotas" [value]="quota.value">
+                            {{quota.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <p class="text-right" style="margin-top:120px;margin-right:40px;"> <button mat-raised-button color="primary" [disabled]="!quataForm.form.valid">Submit</button></p>
+
+                </form>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </section>
+
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+</div>
+

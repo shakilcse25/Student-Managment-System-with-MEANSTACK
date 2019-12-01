@@ -1,0 +1,49 @@
+nav {
+  padding: 0;
+  margin: 0px auto;
+  z-index: 999999999;
+}
+.navarea{
+  display: flex;
+  background-color: black;
+  max-height: 55px;
+}
+
+nav li {
+  display: inline;
+}
+
+nav li a {
+  font-family: Arial;
+  font-size: 16px;
+  text-decoration: none;
+  float: left;
+  padding: 15px 20px;
+  background-color: #333333;
+  color: #ffffff;
+  border-bottom: 1px;
+  border-bottom-color: #000000;
+  border-bottom-style: solid;
+  z-index: 9999;
+}
+
+nav li a:hover {
+  background-color: #9B1C26;
+  padding: 18px 20px;
+  border-bottom: 2px;
+  border-bottom-color: #000000;
+  border-bottom-style: solid;
+  margin: -1px;
+}
+.loginbtn,.registerbtn{
+  margin-right: 26px;
+  color: #fff;
+  padding-top: 18px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.loginbtn:hover,
+.registerbtn:hover{
+  color:#9B1C26;
+}

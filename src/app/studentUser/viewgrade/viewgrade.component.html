@@ -1,0 +1,80 @@
+<app-headerstudent></app-headerstudent>
+  <app-stunav></app-stunav>
+  <div class="col-sm-12" style="padding:0px;display: flex;z-index: 555;">
+    <app-stsidebar class="sidebar col-sm-3" style="float:left;padding: 0px; background-color: honeydew;"></app-stsidebar>
+
+  <div class="col-sm-9 float-left main-content" style="float:left;padding: 0px;padding: 22px 18px;background-color:whitesmoke;
+    z-index: 0;">
+    <mat-card>
+
+
+        <div class="full_content">
+
+          <div class="res_inp_box">
+            <h4 class="text-center">VIEW GRADES</h4>
+            <hr>
+            <form (ngSubmit)="setsemester()" class="semester">
+              <select class="form-control" id="sel1" name="semester" [(ngModel)]="selectsem" required>
+                <option selected disabled>SELECT A SEMESTER</option>
+                <option value="first">1ST SEMESTER</option>
+                <option value="second">2ND SEMESTER</option>
+                <option value="third">3RD SEMESTER</option>
+                <option value="fourth">4TH SEMESTER</option>
+                <option value="fifth">5TH SEMESTER</option>
+                <option value="sixth">6TH SEMESTER</option>
+                <option value="seventh">7TH SEMESTER</option>
+                <option value="eighth">8TH SEMESTER</option>
+              </select>
+              <input type="submit" class="btn btn-primary" style="margin:0px auto;display: block;" value="Show">
+            </form>
+          </div>
+          <div class="box_title">
+            <p class="text-center">{{stus.batch}} Batch</p>
+            <p class="text-center">Department of Computer Science and Engineering</p>
+          </div>
+
+          <div class="mytable">
+            <label for="">Student Name</label>
+            <p> <strong>: {{basic.name}}</strong> </p><br>
+            <label for="">Student Id</label>
+            <p> <strong>: {{stus.dept_id}}</strong> </p>
+            <table>
+              <tr style="border:2px solid red;">
+                <th style="width:10%;">Serial</th>
+                <th style="width:40%;">Subject Name</th>
+                <th style="width:15%;">Subject ID</th>
+                <th style="width:10%;">Earned GPA</th>
+                <th style="width:10%;">Grade</th>
+              </tr>
+              <tr *ngFor="let st of test; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{st.subject_name}}</td>
+                <td>{{st.subject_code}}</td>
+                <td>{{st.subject_point}}</td>
+                <td>{{st.subject_grade}}</td>
+              </tr>
+            </table>
+            <p class="text-right gpa"> <strong>GPA: 4.00</strong> </p>
+          </div>
+
+          <div class="conclusion">
+            <p class="con_para"> <strong>Registered Credit Hours in this Terms</strong> </p>
+            <p style="display: flex;"> <strong>:{{semobj.total_credit}}</strong> </p>
+            <p class="con_para"> <strong>Credit Hours Earned in this Terms</strong> </p>
+            <p style="display: flex;"> <strong>:{{semobj.earn_credit}}</strong> </p>
+            <p class="con_para"> <strong>Status</strong> </p>
+            <p style="display: flex;"> <strong>:{{semobj.status}}</strong> </p>
+            <p class="con_para"> <strong>CGPA</strong> </p>
+            <p style="display: flex;"> <strong>:{{semobj.currentgpa}}</strong> </p>
+          </div>
+        </div>
+
+
+
+
+
+    </mat-card>
+  </div>
+
+  </div>
+<app-stfooter></app-stfooter>

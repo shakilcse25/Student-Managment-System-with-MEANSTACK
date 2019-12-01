@@ -1,0 +1,30 @@
+.nav{
+    display: block;
+}
+.nav li{
+    float: none;
+    margin-bottom: 6px;
+}
+.nav li a{
+    transition: 0.5s;
+}
+.nav li a i{
+    float: left;
+    margin-right: 15px;
+    padding-left: 20px;
+}
+.nav li a:not(.active):hover {
+    background-color: gainsboro;
+}
+.sidebar{
+    float: left;
+    padding: 0px;
+}
+.sidebar-wrapper{
+    padding: 44px 40px;
+    background-color: honeydew;
+}
+.active{
+    background-color: lightgreen;
+    border-radius: 4px;
+}

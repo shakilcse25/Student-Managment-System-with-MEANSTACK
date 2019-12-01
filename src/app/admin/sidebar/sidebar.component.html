@@ -1,0 +1,45 @@
+<!-- sidebar menu area start -->
+<div class="sidebar-menu">
+  <div class="sidebar-header">
+    <div class="logo">
+    <a [routerLink]="['/dashboard']"><img src="assets/images/icon/images.jpg" alt="logo"></a>
+    </div>
+  </div>
+
+  <div class="main-menu">
+    <div class="menu-inner">
+      <nav>
+        <ul class="metismenu" id="menu">
+          <li class="active dsh">
+            <a [routerLink]="['/dashboard']" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+          </li>
+
+          <li class="student">
+            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-group"></i><span>Student</span></a>
+            <ul class="collapse" id="student">
+              <li class="viewstudents"><a [routerLink]="['/viewstudents']"> View Student </a></li>
+              <li class="addstudent"><a [routerLink]="['/addstudent']">Add Student</a></li>
+              <li class="result"><a [routerLink]="['/results']">Result</a></li>
+            </ul>
+          </li>
+
+
+          <li class="payment">
+            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-money"></i><span>Payment</span></a>
+            <ul class="collapse" id="payment">
+            <li class="viewpayment"><a [routerLink]="['/viewpayment']">Payment Action</a></li>
+            </ul>
+          </li>
+
+          <li class="course">
+            <a [routerLink]="['/course']" aria-expanded="true"><i class="fa fa-book"></i><span>Course</span></a>
+          </li>
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>
+<!-- sidebar menu area end -->

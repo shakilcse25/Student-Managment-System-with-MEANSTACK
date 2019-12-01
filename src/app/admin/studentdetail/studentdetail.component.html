@@ -1,0 +1,320 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <app-header></app-header>
+
+    <!-- page title area start -->
+    <div class="page-title-area">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="breadcrumbs-area clearfix">
+            <h4 class="page-title pull-left">Student List</h4>
+            <ul class="breadcrumbs pull-left">
+              <li><a href="index.html">Dashboard</a></li>
+              <li><span>Student</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 clearfix">
+          <div class="user-profile pull-right">
+            <img class="avatar user-thumb" src="assets/images/icon/bauet.png" alt="avatar">
+            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Bauet <i class="fa fa-angle-down"></i></h4>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Message</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- page title area end -->
+    <div class="main-content-inner">
+
+      <div class="full_profile">
+        <div class="main_profile col-sm-4 float-left">
+          <mat-card>
+            <div class="profile_pic">
+              <img src="assets/images/student.jpg" alt="">
+            </div>
+            <div class="profile_text">
+
+              <table style="width:100%;">
+                <tr>
+                  <td colspan="2">
+                    <span class="name">
+                      <h3>{{basic.name}}</h3>
+                      <p></p>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="gender">
+                      <h3>Gender</h3>
+                      <p>{{basic.gender}}</p>
+                    </span>                    
+                  </td>
+                  <td>
+                    <span class="id">
+                      <h3>ID</h3>
+                      <p>{{stu.dept_id}}</p>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="dept">
+                      <h3>Department</h3>
+                      <p>{{stu.dept}}</p>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="batch">
+                      <h3>Batch</h3>
+                      <p>{{stu.batch}}</p>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="email">
+                      <h3>Email</h3>
+                      <p>shakil@gmail.com</p>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="phone">
+                      <h3>Phone</h3>
+                      <p>{{basic.phone}}</p>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="address">
+                      <h3>Address</h3>
+                      <p>{{basic.pre_district}}</p>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+
+            </div>
+          </mat-card>
+        </div>
+        <div class="tab_profile col-sm-8 float-left">
+          <mat-tab-group>
+            <mat-tab label="Basic">
+              <mat-list>
+                <mat-list-item> <strong>Father's Name:</strong>{{basic.father_name}}</mat-list-item>
+                <mat-list-item> <strong>Phone:</strong>{{basic.father_phone}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item> <strong>Mother's Name:</strong> {{basic.mother_name}}</mat-list-item>
+                <mat-list-item><strong>Phone:</strong> {{basic.mother_phone}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item><strong>Birth Date:</strong>{{basic.date_of_birth}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+
+                <mat-list-item><strong>Birth Cirtificate No:</strong>{{basic.father_name}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item><strong>Blood Group:</strong>{{basic.Birth_cirtificate}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item><strong>Religion:</strong>{{basic.religion}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item><strong>Marital Status:</strong>{{basic.marital}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+
+
+                <mat-tab-group style="margin:24px;">
+                  <mat-tab label="Present Address">
+                    <mat-list-item><strong>City/Village:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Road:</strong>Dayalermor Road</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>District:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Post:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Thana:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Upozila:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                  </mat-tab>
+
+                  <mat-tab label="Permanent Address">
+                    <mat-list-item><strong>City/Village:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Road:</strong>Dayalermor Road</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>District:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Post:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Thana:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Upozila:</strong>Naogoan</mat-list-item>
+                    <mat-divider></mat-divider>
+                  </mat-tab>
+                </mat-tab-group>
+              </mat-list>
+            </mat-tab>
+
+
+
+            <mat-tab label="Educational">
+              <mat-list>
+                <mat-list-item><strong>School Name[SSC]:</strong>Jonokollayan Model High School.</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item><strong>Collag Name[HSC]:</strong>Naogoan Govt. Degree Collage</mat-list-item>
+                <mat-divider></mat-divider>
+              </mat-list>
+
+              <mat-tab-group style="margin:24px;">
+                <mat-tab label="HSC" class="hsc">
+                  <mat-list>
+                    <mat-list-item><strong>Educational Board:</strong>Rajshahi</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Reg. No:</strong>112197</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Passed Year:</strong>2015</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Obtained GPA:</strong>5.00</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Grade:</strong>A+</mat-list-item>
+                    <mat-divider></mat-divider>
+                  </mat-list>
+                </mat-tab>
+
+                <mat-tab label="SSC">
+                  <mat-list>
+                    <mat-list-item><strong>Educational Board:</strong>Rajshahi</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Reg. No:</strong>234513</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Passed Year:</strong>2013</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Obtained GPA:</strong>5.00</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Grade:</strong>A+</mat-list-item>
+                    <mat-divider></mat-divider>
+                  </mat-list>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-tab>
+
+            
+
+            <mat-tab label="Billing and Payment">
+              <mat-tab-group style="margin:30px;">
+
+                <mat-tab label="Payment History" class="history_pay">
+                    <table style="    width: 92%;margin: 30px;">
+                      <tr>
+                        <th>Serial</th>
+                        <th>Date</th>
+                        <th>Type of Payment</th>
+                        <th>MRC NO</th>
+                        <th>Amount</th>
+                        <th>Remark</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>20/5/18</td>
+                        <td>Semester Fee</td>
+                        <td>65443</td>
+                        <td>84000</td>
+                        <td><mat-icon>check</mat-icon></td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>20/5/18</td>
+                        <td>Semester Fee</td>
+                        <td>65443</td>
+                        <td>84000</td>
+                        <td>
+                          <mat-icon>check</mat-icon>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>20/5/18</td>
+                        <td>Semester Fee</td>
+                        <td>65443</td>
+                        <td>84000</td>
+                        <td>
+                          <mat-icon>check</mat-icon>
+                        </td>
+                      </tr>
+                    </table>
+                </mat-tab>
+
+                <mat-tab label="Initial Payment">
+                  <mat-list>
+                    <mat-list-item><strong>Admission Fee:</strong>30000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Semester Fee:</strong>80000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Establishment Fee:</strong>5000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Security Mont(Refundable):</strong>8000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Term Registration Fee:</strong>2000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Tution Fee:</strong>9000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Library Fee:</strong>1000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Student Activity:</strong>500</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item><strong>Total:</strong>140000</mat-list-item>
+                    <mat-divider></mat-divider>
+
+                  </mat-list>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,43 @@
+<div class="main_modal">
+        <h3 class="text-center">UPDATE COURSE</h3>
+    
+    <section>
+        <div class="crs_name">
+            <form class="addcourse" (ngSubmit)="submitEdit(mycrs._id)" class="updatecrs">
+                
+                <label for="flexdatalist" style="width:39%;float: left;color:black;padding-left: 2px;">Subject Name: </label>
+                <p style="font-size: 10px;float: left;width:60%; ">Can't find requiered subject?<a href="">Add New Subject</a></p>
+                <select [(ngModel)]="mycrs.subject_name" class="chosen-select course_name" id="scripts" name="subject_name">
+                    <option value=""></option>
+                    <option *ngFor="let crs of autocourse_name" [ngValue]="crs.course_name" [selected]="mycrs.subject_name == true">{{crs.course_name}}</option>
+                </select>
+
+                <mat-form-field style="margin-top: 25px;padding-left: 2px;float: none;margin-right: 40px;">
+                    <input type="number" matInput placeholder="Earned Point" [(ngModel)]="mycrs.subject_point" name="subject_point">
+                </mat-form-field>
+
+                <mat-form-field style="margin-top: 15px;padding-left: 2px;float: none;margin-right: 40px;">
+                    <input type="text" matInput placeholder="Grade" name="subject_grade" [(ngModel)]="mycrs.subject_grade">
+                </mat-form-field>
+
+                <p class="text-center" style="margin-top: 30px;"><button type="submit" style="background-color:cadetblue;" mat-button>Submit</button></p>
+            </form>
+        </div>
+    </section>
+</div>
+
+<style>
+h3{
+    padding:30px 20px;
+    background-color:lightgray;
+}
+section{
+    background-color: whitesmoke;
+    padding: 25px 15px;
+    min-height: 350px;
+}
+.main_modal{
+    border-radius: 4px;
+}
+
+</style>

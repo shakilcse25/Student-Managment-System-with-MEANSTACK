@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.main-content-inner .mat-form-field-flex {
+  padding-left: 8px !important;
+}
+
+.mat-elevation-z8 {
+  margin-top: 30px;
+}

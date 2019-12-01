@@ -1,1 +1,189 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+
+
+* {
+  font-family: 'Poppins';
+  padding: 0px;
+  margin: 0px;
+}
+thead{
+  display:content;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.mytab .mat-tab-label-active {
+  background-color: lightskyblue;
+  color: maroon;
+  font-weight: 900;
+}
+
+.mat-tab-group {
+  border: 1px solid lightblue;
+  box-shadow: 0px 2px 6px 2px #a197d6c7;
+}
+
+.mytab .mat-tab-label,
+.mytab .mat-link-bar {
+  min-width: 235px !important;
+}
+
+.gender .mat-radio-label-content {
+  padding-left: 3px !important;
+  padding-right: 10px !important;
+}
+
+.gender .mat-radio-group {
+  display: block;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.basic_address .mat-form-field {
+  width: 90%;
+}
+
+.basic_address {
+  display: flex;
+}
+
+.example-margin,
+.mat-radio-label-content {
+  font-weight: 400 !important;
+}
+
+.education_main .mat-form-field {
+  width: 100%;
+}
+
+.billing_main .mat-form-field {
+  width: 70%;
+}
+
+.payment_main .mat-form-field {
+  width: 60%;
+}
+
+.quota_main .mat-form-field {
+  width: 60%;
+}
+.datatable .mat-form-field {
+  display: block;
+  width: 200px;
+  float: right;
+  margin-right: 25px;
+}
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
+.mat-tab-labels{
+    margin: 0px auto;
+    width: fit-content;
+}
+.ssc .board,.ssc .brd,.ssc .reg,.ssc .pass_year,.ssc .marks,.ssc .gpa {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.ssc .mat-form-field{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.main-content-inner .mat-form-field-flex {
+  padding-left: 8px !important;
+}
+.mat-elevation-z8 th{
+  width: 20%;
+  font-size: 20px;
+}
+.mat-elevation-z8 tr a{
+  margin-right: 8px;
+}
+.mat-elevation-z8 th, .mat-elevation-z8 tr{
+  text-align: center !important;
+}
+.left .mat-button-wrapper {
+  color: #fff !important;
+}
+.left .mat-button-wrapper {
+  color: #fff !important;
+}
+.addpayment .mat-form-field-wrapper{
+  width: 236px;
+}
+.addpayment {
+  margin: 0px auto !important;
+  width: 50% !important;
+}
+.cdk-global-overlay-wrapper{
+  z-index: 2000;
+}
+.findpayment .mat-form-field{
+  width: 205px;
+}
+.mat-icon{
+  cursor: pointer;
+  margin-left:8px;
+}
+.action{
+  padding-left: 8px;
+}
+thead{
+    margin: 0px 0px 15px 0px !important;
+    font-size: 18px;
+    display: content;
+    font-weight: bold;
+}
+.mat-list-item strong{
+  padding-right: 7px;
+}
+.mat-tab-label-active {
+    background-color: #5f9ea038 !important;
+}
+.cdk-overlay-container {
+  z-index: 9999;
+}
+ul.ui-autocomplete {
+  z-index: 1100;
+}
+/* mat-form-field-label-wrapper
+mat-form-field-label */
+.alert_panel {
+  z-index: 99999;
+  background-color: lightyellow;
+  padding: 8px;
+  width: 500px;
+  height: 254px;
+}
+
+.chosen-container {
+  width: 100% !important;
+}
+
+.mat-dialog-container{
+  padding: 0px !important;
+}

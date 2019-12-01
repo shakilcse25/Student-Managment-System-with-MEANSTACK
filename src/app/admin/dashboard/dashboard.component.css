@@ -1,0 +1,20 @@
+.main-content-inner{
+    background-image:url("../../../assets/images/bg/bauet_bld.jpg");
+    background-size: 120% 120%;
+    min-height: 500px;
+    position: relative;
+    padding: 0px !important;
+}
+.opacity{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    position: absolute;
+}
+.main-content-inner h1{
+    color:#fff;
+    text-align: center;
+    position: relative;
+    padding-top: 200px;
+}

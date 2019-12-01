@@ -1,0 +1,10 @@
+form .btn{
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+    background-color: mediumaquamarine;
+    font-weight: bold;
+}
+table{
+    width: 100%;
+}

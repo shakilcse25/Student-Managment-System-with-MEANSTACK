@@ -1,0 +1,52 @@
+.header_area {
+  height: 260px;
+  background-image: url(../../../assets/images/bauet.jpg);
+  width: 100%;
+  position: relative;
+  background-size: contain;
+}
+
+
+
+.header_main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+
+  background: rgb(240, 255, 240);
+  background: linear-gradient(90deg, rgba(240, 255, 240, 1) 68%, rgba(2, 0, 36, 0) 100%);
+}
+
+.content h1 {
+  font-weight: bold;
+  font-size: 40px;
+  font-family: sans-serif;
+  color: #015249;
+  margin-top: 55px;
+}
+
+
+
+.content h2 {
+  font-weight: bold;
+  font-size: 32px;
+  font-family: sans-serif;
+  color: #414141;
+  text-align: left;
+}
+.logo img {
+  height: 60%;
+  width: 60%;
+  padding-top: 35px;
+  padding-left: 10px;
+}
+
+.logo {
+  padding-left: 40px;
+  float: left;
+}
+.content{
+    float: left;
+    padding-top: 15px;
+}

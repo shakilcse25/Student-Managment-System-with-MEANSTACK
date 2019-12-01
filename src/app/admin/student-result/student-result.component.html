@@ -1,0 +1,94 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <app-header></app-header>
+
+    <!-- page title area start -->
+    <div class="page-title-area">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="breadcrumbs-area clearfix">
+            <h4 class="page-title pull-left">Student List</h4>
+            <ul class="breadcrumbs pull-left">
+              <li><a href="index.html">Student</a></li>
+              <li><span>Result</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 clearfix">
+          <div class="user-profile pull-right">
+            <img class="avatar user-thumb" src="assets/images/icon/bauet.png" alt="avatar">
+            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Bauet <i class="fa fa-angle-down"></i></h4>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Message</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- page title area end -->
+    <div class="main-content-inner">
+
+
+
+
+      <!-- data table start -->
+      <div class="mat-elevation-z8">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="dept_id">
+            <th mat-header-cell *matHeaderCellDef style="width:10%;"> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.dept_id}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="basic_info.name">
+            <th mat-header-cell *matHeaderCellDef style="width:30%;">Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.basic_info.name}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="dept">
+            <th mat-header-cell *matHeaderCellDef style="width:15%;"> Department </th>
+            <td mat-cell *matCellDef="let element"> {{element.dept}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="result.cgpa">
+            <th mat-header-cell *matHeaderCellDef style="width:15%;"> GPA </th>
+            <td mat-cell *matCellDef="let element"> {{element.result.cgpa}} </td>
+          </ng-container>
+
+
+
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef style="width:30%;">Actions</th>
+            <td mat-cell *matCellDef="let element"> 
+              <a  [routerLink]="['/updateresult', element._id]" ><mat-icon>edit</mat-icon></a> 
+             
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[15, 10, 30]" showFirstLastButtons></mat-paginator>
+      </div>
+      <!-- data table end -->
+
+
+
+
+
+    </div>
+
+  </div>
+  <app-footer></app-footer>
+</div>

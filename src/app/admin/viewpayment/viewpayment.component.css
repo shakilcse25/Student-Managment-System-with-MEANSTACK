@@ -1,0 +1,87 @@
+.findpayment .mat-form-field{
+    margin-right: 20px;
+}
+.findpayment .mat-button-wrapper{
+    color: #fff !important;
+}
+.findpayment button{
+    background-color: lightseagreen;
+}
+.findpayment{
+    margin-top: 30px;
+}
+.paymentbtn{
+    margin: 30px 0px;
+    margin-left: 153px;
+}
+.paymentbtn button{
+    background-color: teal;
+}
+#myModal .modal-content,
+#history .modal-content {
+    padding: 15px;
+    min-height: 400px;
+    min-width: 250px;
+}
+#myModal .modal-content .mat-toolbar p{
+    width: 100%;
+    font-size: 20px;
+}
+.addpayment{
+    margin-top: 20px;
+}
+.addpayment button{
+    background-color: cadetblue;
+}
+.addpayment{
+    padding-top: 20px;
+}
+.profile{
+    float: left;
+    margin-top: 40px;
+}
+.left{
+    float: left;
+}
+.full-row{
+    display: flex;
+}
+.profile .mat-card{
+    width: 368px;
+    min-height: 360px;
+    margin: 0px auto;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.mainprofile table{
+    width: 100%;
+}
+.mainprofile table td{
+    padding: 10px 5px;
+    font-size: 18px;
+}
+.mainprofile{
+    margin-top: 68px;
+}
+.profile_pic{
+    position:absolute;
+    top:-100%;
+    left:0;
+    transition: 0.5s;
+}
+.profile .mat-card:hover .profile_pic{
+    top: 0;
+    left: 0;
+}
+.payment_history table{
+    width: 100%;
+}
+.payment_history{
+    margin-top: 30px;
+}
+.left{
+    padding-top: 115px;
+    padding-left: 120px;
+}

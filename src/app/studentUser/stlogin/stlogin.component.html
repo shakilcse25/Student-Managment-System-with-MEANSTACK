@@ -1,0 +1,35 @@
+<app-headerstudent></app-headerstudent>
+<app-stunav></app-stunav>
+<div class="col-sm-12" style="padding:20px;display: flex;z-index: 555;">
+
+
+
+
+      <div class="loginarea col-sm-12">
+        <mat-card>
+          <div class="login_form">
+            <form (ngSubmit)="loginStudent(login)">
+              <fieldset class="scheduler-border">
+                <legend class="scheduler-border" align="center"> <strong>LOGIN</strong></legend>
+                <div class="main_form">
+                  <label for="">Department ID:</label> <input type="text" [(ngModel)]="login.dept_id"  size="30" name="dept_id"
+                    class="form-control input-sm"><br>
+                  <label for="">Password:</label> <input type="password" [(ngModel)]="login.password" name="dept_id"
+                    size="20" class="form-control input-sm">
+
+                  <button type="submit" name="button" class="form-control input-sm btn btn-primary">Login</button>
+                  <p>Fogot Password ? <a href="#">Click Here.</a> </p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </mat-card>
+      </div>
+
+
+
+
+
+
+</div>
+<app-stfooter></app-stfooter>
